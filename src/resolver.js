@@ -157,16 +157,7 @@ const resolvers = {
       return true;
     }
 
-    getItem: function(parent, args, contexts){
-      const token = context.userToken;
-      const itemId = args.itemId;
-
-      for ()
-
-      
-      
-
-    }
+    
   }
 };
 
