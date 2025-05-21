@@ -22,6 +22,7 @@ const typeDefs = gql`
 
   type Query {
     getCart: Cart
+    getItem(id: ID!): CartItem
   }
 
   type Mutation {
@@ -31,6 +32,9 @@ const typeDefs = gql`
     removeItem(itemId: ID!): Cart
     clearCart: Boolean
   }
+
+
+
 `;
 
 module.exports = typeDefs;

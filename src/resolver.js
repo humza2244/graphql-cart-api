@@ -50,7 +50,10 @@ const resolvers = {
         cart = { items: [] };
       }
 
+      //adds items into the cart
       cart.items.push(input);
+
+      //saves updated cart bac to the map
       carts.set(token, cart);
 
       let total = 0;
@@ -152,6 +155,17 @@ const resolvers = {
       const token = context.userToken;
       carts.set(token, { items: [] });
       return true;
+    }
+
+    getItem: function(parent, args, contexts){
+      const token = context.userToken;
+      const itemId = args.itemId;
+
+      for ()
+
+      
+      
+
     }
   }
 };

@@ -1,0 +1,80 @@
+Set Authorization Header (in Headers tab):
+------------------------------------------
+Key: Authorization
+Value: Bearer abc123
+
+------------------------------------------
+Create a Cart:
+------------------------------------------
+mutation {
+  createCart
+}
+
+------------------------------------------
+Add Item to Cart:
+------------------------------------------
+mutation {
+  addItemToCart(input: {
+    id: "1"
+    name: "Shirt"
+    quantity: 2
+    unitPrice: 25
+  }) {
+    items {
+      id
+      name
+      quantity
+      unitPrice
+    }
+    total
+  }
+}
+
+------------------------------------------
+Get Cart Contents:
+------------------------------------------
+query {
+  getCart {
+    items {
+      id
+      name
+      quantity
+      unitPrice
+    }
+    total
+  }
+}
+
+------------------------------------------
+Update Item Quantity:
+------------------------------------------
+mutation {
+  updateItemQuantity(itemId: "1", quantity: 5) {
+    items {
+      id
+      name
+      quantity
+    }
+    total
+  }
+}
+
+------------------------------------------
+Remove Item from Cart:
+------------------------------------------
+mutation {
+  removeItem(itemId: "1") {
+    items {
+      id
+      name
+    }
+    total
+  }
+}
+
+------------------------------------------
+Clear the Cart:
+------------------------------------------
+mutation {
+  clearCart
+}

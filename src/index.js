@@ -7,6 +7,7 @@ const server = new ApolloServer({
   typeDefs,       // your schema (the menu)
   resolvers,      // your logic (the kitchen)
   context: ({ req }) => {
+
     // this runs on every request and gives you the token
     const auth = req.headers.authorization || '';
     const token = auth.replace('Bearer ', '');
@@ -16,6 +17,7 @@ const server = new ApolloServer({
   },
 });
 
+
 server.listen().then(({ url }) => {
-  console.log(`🚀 Server ready at ${url}`);
+  console.log(`Server ready at ${url}`);
 });
